@@ -45,7 +45,7 @@ export class StormEngine {
     this.bugReturn=Math.min(3540,this.edges[5]+this.rand(15,60));
   }
   configure(values){
-    for(const [key,min,max] of [['hours',1,3],['pace',.5,2],['intensity',0,1.5],['crickets',0,2],['frogs',0,2]]){
+    for(const [key,min,max] of [['hours',1,3],['pace',.5,2],['intensity',0,2],['crickets',0,2],['frogs',0,2]]){
       if(Number.isFinite(values[key]))this.settings[key]=clamp(values[key],min,max);
     }
   }

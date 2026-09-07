@@ -1,0 +1,31 @@
+Boodler: a programmable soundscape tool
+  Sound library
+  Collection date: February 19, 2002 (021902)
+
+Collected from many sources by Andrew Plotkin <erkyrath@eblong.com>
+   <http://www.eblong.com/zarf/boodler/>
+
+These sounds are copyrighted by their various owners. See the
+copyright and usage references in each subdirectory's README file. I
+have tried to collect only sounds that are free for use in
+non-commercial multimedia projects (or public-domain).
+
+A few sounds were found unattributed, through blind Web-searching. I
+take the (arrogant) position that either these were used legally on
+the Web, and are therefore free for non-commercial use, or else the
+original creator is unfindable and therefore there is nothing I can do
+about it. Since Boodler is not, in the grand scheme of the sound-using
+world, a big deal, this is probably good enough.
+
+If you wish to use a Boodler soundscape in a commercial recording, or
+some other for-profit procedure that makes use of the Boodler sound
+library, the copyrights are your responsibility. You must look at the
+README files and ensure that before you use any sounds that say
+"non-commercial use only", you contact the copyright holder for
+permission.
+
+(Alternatively, toss this sound library and use your own sounds. The
+Boodler engine itself is free software under the LGPL; it is not
+limited by the restrictions of this sound library. Boodler can be used
+in nearly all situations, commercial and non-commercial. See the
+copyright statement that comes with Boodler.)

@@ -1,0 +1,69 @@
+* environmental and atmospheric sounds
+
+- Water droplets
+
+droplet-plink.aiff  droplet-plink-reverb.aiff  droplet-plink-reverb-2.aiff
+droplet-plink-reverb-3.aiff  droplet-bloink.aiff
+
+water-bubbling.aiff  (looped)
+
+- Wind
+
+wind-gust-1.aiff  wind-gust-2.aiff  wind-gust-3.aiff
+
+wind-far.aiff  wind-gust.aiff  wind-hard.aiff  wind-heavy.aiff
+wind-steady.aiff  (looped)
+
+- Rain
+
+rain-heavy.aiff  rain-med.aiff  rain-on-leaves.aiff  rain-splashy.aiff 
+rain-splashy-low.aiff  rain-splatter.aiff  rain-thin.aiff
+(all looped)
+
+- Thunder
+
+thunder-low.aiff  thunder-tense.aiff  (looped)
+
+thunder-low-1.aiff  thunder-low-2.aiff
+
+- Flowing water
+
+water-pouring.aiff  water-rapids.aiff  water-rushing.aiff  (looped)
+
+water-trickle.aiff
+
+waves-floopy.aiff  waves-lapping.aiff  waves-light.aiff  waves-rough.aiff  
+(all looped)
+
+- Fire
+
+fire-small.aiff  (looped)
+
+- Human heartbeat  [it feels environmental to *me*]
+
+heartbeat.aiff  heartbeat-low.aiff   (looped)
+
+* sources:
+
+droplet-bloink (extracted from a "bubbles" effect)
+rain-thin.aiff  rain-med.aiff  thunder-low.aiff  thunder-tense.aiff
+-- littlemusicclub.com
+-- "for copyright purposes you can use ours freely just by placing the
+   'SFX by littlemusicclub.com' banner onto your web page or by
+   mentioning the source"
+
+heartbeat-low.aiff  rain-on-leaves.aiff  rain-splashy.aiff  
+rain-splashy-low.aiff  thunder-low-1.aiff  thunder-low-2.aiff
+water-rapids.aiff  waves-floopy.aiff  waves-light.aiff
+-- Madacy Music Group sound effect collections
+-- "Any commercial use in whole or in part of these sound effects 
+   constitutes a violation of copyright laws."
+
+fire-small.aiff  rain-heavy.aiff  rain-splatter.aiff  water-bubbling.aiff  
+water-pouring.aiff  water-rushing.aiff  waves-lapping.aiff  waves-rough.aiff  
+wind-heavy.aiff  wind-gust-1.aiff  wind-gust-2.aiff  wind-gust-3.aiff  
+wind-far.aiff
+-- Nesak International sound effect collections
+-- Permission granted for non-commercial use with Boodler
+
+others: found sounds

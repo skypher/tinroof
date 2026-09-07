@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101e1d"><meta name="description" content="An hour of original Boodler rain, thunder, crickets and frogs, repeating endlessly.">
+<title>Boodler — A passing storm</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="brand" href="/">boodler<span>FIELD RECORDINGS / GENERATIVE ROOTS</span></a><span class="edition">01 — SUMMER STORM</span></header>
+<main>
+<div class="landscape" aria-hidden="true"><div class="moon"></div><div class="ridge back"></div><div class="ridge front"></div><div class="rain"></div><div class="water"></div></div>
+<section class="player" aria-labelledby="title">
+<div class="eyebrow"><span class="dot"></span> A LITTLE WEATHER. ALL THE TIME.</div>
+<h1 id="title">A passing<br><em>storm.</em></h1>
+<p class="intro">Crickets in the evening air. Frogs by the water.<br>Rain rolls in, then the world grows quiet again.</p>
+<div class="controls"><button id="toggle" class="play" aria-label="Play storm"><span id="symbol" aria-hidden="true">▶</span></button><div><strong id="state" role="status">Stay a while</strong><span class="hint" id="hint">One hour · Repeats endlessly</span></div><span class="infinity" aria-label="Loop enabled">∞</span></div>
+<label class="sr" for="seek">Position in the storm</label><input id="seek" class="seek" type="range" min="0" max="3600" value="0" step="1"><div class="times"><span id="elapsed">00:00</span><span>60:00 / ON REPEAT</span></div>
+<div class="bottom"><label for="volume">VOLUME <input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></label><button id="restart">↺ &nbsp; Start over</button></div>
+<p id="error" role="alert"></p>
+</section>
+</main>
+<footer><span>RAIN &nbsp; / &nbsp; THUNDER &nbsp; / &nbsp; CRICKETS &nbsp; / &nbsp; FROGS</span><details><summary>The original soundscape ↗</summary><p>Rendered from Boodler 1.6.1’s <code>owstorm.RainForever</code>, with its original 2002 sound library. Soundscape by Owen Williams, with pieces by Peter Williams; Boodler by Andrew Plotkin. This player repeats one rendered hour, with a short fade at the boundary. <a href="credits.txt">Original sound credits</a>.</p></details></footer>
+<audio id="audio" src="audio/storm.mp3" preload="metadata" loop></audio>
+<script src="app.js"></script>
+</body></html>

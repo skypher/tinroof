@@ -1,0 +1,12 @@
+* animals
+
+frog-bullfrog1.aiff  frog-bullfrog2.aiff  frog-bullfrog3.aiff
+frog-cheep.aiff  (looped)
+
+* source:
+
+frog-bullfrog1.aiff  frog-bullfrog2.aiff  frog-bullfrog3.aiff
+frog-cheep.aiff
+-- Madacy Music Group sound effect collections
+-- "Any commercial use in whole or in part of these sound effects 
+   constitutes a violation of copyright laws."

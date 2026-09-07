@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101e1d"><meta name="description" content="An hour of original Boodler rain, thunder, crickets and frogs, repeating endlessly.">
+<meta name="theme-color" content="#101e1d"><meta name="description" content="Original Boodler storms, long recordings and endlessly generated rain, thunder, crickets and frogs.">
 <title>Boodler — A passing storm</title><link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,13 +13,23 @@
 <div class="eyebrow"><span class="dot"></span> A LITTLE WEATHER. ALL THE TIME.</div>
 <h1 id="title">A passing<br><em>storm.</em></h1>
 <p class="intro">Crickets in the evening air. Frogs by the water.<br>Rain rolls in, then the world grows quiet again.</p>
+<div class="listening-mode"><label for="mode">HOW LONG WILL YOU STAY?</label>
+<select id="mode"><option value="1">Original hour · on repeat</option><option value="4">Four-hour recording · on repeat</option><option value="8">Eight-hour recording · on repeat</option><option value="live">Endless · a new storm every time</option></select></div>
+<fieldset id="weather" hidden><legend>Make yourself comfortable</legend>
+<div class="weather-row"><label for="cycle">Storm cycle</label><select id="cycle"><option value="1">1 hour</option><option value="2">2 hours</option><option value="3">3 hours</option></select></div>
+<div class="weather-row"><label for="pace">Weather speed</label><select id="pace"><option value="0.5">Unhurried · ½×</option><option value="1" selected>Natural · 1×</option><option value="2">Passing through · 2×</option></select></div>
+<label class="weather-slider" for="intensity">Storm strength <input id="intensity" type="range" min="0" max="1.5" value="1" step="0.05"><output id="intensity-value">100%</output></label>
+<label class="weather-slider" for="crickets">Crickets <input id="crickets" type="range" min="0" max="2" value="1" step="0.05"><output id="crickets-value">100%</output></label>
+<label class="weather-slider" for="frogs">Frogs <input id="frogs" type="range" min="0" max="2" value="1" step="0.05"><output id="frogs-value">100%</output></label>
+<p class="weather-note">Wildlife retreats during heavy rain, then returns. Slower weather stretches the cycle, never the pitch.</p>
+</fieldset>
 <div class="controls"><button id="toggle" class="play" aria-label="Play storm"><span id="symbol" aria-hidden="true">▶</span></button><div><strong id="state" role="status">Stay a while</strong><span class="hint" id="hint">One hour · Repeats endlessly</span></div><span class="infinity" aria-label="Loop enabled">∞</span></div>
-<label class="sr" for="seek">Position in the storm</label><input id="seek" class="seek" type="range" min="0" max="3600" value="0" step="1"><div class="times"><span id="elapsed">00:00</span><span>60:00 / ON REPEAT</span></div>
+<label class="sr" for="seek">Position in the storm</label><input id="seek" class="seek" type="range" min="0" max="3600" value="0" step="1"><div class="times"><span id="elapsed">00:00</span><span id="duration">60:00 / ON REPEAT</span></div>
 <div class="bottom"><label for="volume">VOLUME <input id="volume" type="range" min="0" max="1" value="0.7" step="0.01"></label><button id="restart">↺ &nbsp; Start over</button></div>
 <p id="error" role="alert"></p>
 </section>
 </main>
-<footer><span>RAIN &nbsp; / &nbsp; THUNDER &nbsp; / &nbsp; CRICKETS &nbsp; / &nbsp; FROGS</span><details><summary>The original soundscape ↗</summary><p>Rendered from Boodler 1.6.1’s <code>owstorm.RainForever</code>, with its original 2002 sound library. Soundscape by Owen Williams, with pieces by Peter Williams; Boodler by Andrew Plotkin. This player repeats one rendered hour, with a short fade at the boundary. <a href="credits.txt">Original sound credits</a>.</p></details></footer>
+<footer><span>RAIN &nbsp; / &nbsp; THUNDER &nbsp; / &nbsp; CRICKETS &nbsp; / &nbsp; FROGS</span><details><summary>The original soundscape ↗</summary><p>Rendered from Boodler 1.6.1’s <code>owstorm.RainForever</code>, with its original 2002 sound library. Soundscape by Owen Williams, with pieces by Peter Williams; Boodler by Andrew Plotkin. Choose the original recording, four or eight distinct recorded hours, or live sound generated from the original samples. Live mode adapts the original storm recipe; recordings preserve the original engine. Recorded hours have a short fade at each boundary. Mobile operating systems may suspend live audio in the background. <a href="credits.txt">Original sound credits</a>.</p></details></footer>
 <audio id="audio" src="audio/storm.mp3" preload="metadata" loop></audio>
-<script src="app.js"></script>
+<script type="module" src="app.js"></script>
 </body></html>

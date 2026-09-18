@@ -42,6 +42,6 @@ try{
  await page.selectOption('#mode','1');await page.waitForFunction(()=>window.stormContext.state==='suspended');
  await page.click('#toggle');
  await page.selectOption('#mode','live');await page.setViewportSize({width:390,height:844});
- await page.screenshot({path:'/tmp/rainfall-live-mobile.png',fullPage:true});assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)));
+ await page.screenshot({path:'/tmp/tinroof-live-mobile.png',fullPage:true});assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)));
  assert.deepEqual(errors,[]);console.log('PASS audio-thread continuity, mode switching, mobile layout, no JS errors');
 }finally{await browser.close();}

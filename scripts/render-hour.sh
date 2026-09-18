@@ -9,7 +9,7 @@ number=$2
 [[ $number =~ ^[2-8]$ ]] || { echo 'Hour must be 2–8' >&2; exit 1; }
 out="$root/web/audio/hour-$number.mp3"
 [[ ! -e $out ]] || { echo "Already rendered: $out"; exit 0; }
-raw=$(mktemp /tmp/rainfall-hour-XXXXXX.raw)
+raw=$(mktemp /tmp/tinroof-hour-XXXXXX.raw)
 trap 'rm -f "$raw"' EXIT
 export PYTHONPATH="$root/Boodler-1.6.1/src"
 export BOODLER_SOUND_PATH="$root/boodler-snd"

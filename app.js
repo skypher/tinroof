@@ -82,7 +82,7 @@ $('seek').addEventListener('change',()=>seekTo(Number($('seek').value)));
 $('seek').addEventListener('input',()=>{$('elapsed').textContent=clock(Number($('seek').value));});
 $('restart').addEventListener('click',()=>seekTo(0));
 if('mediaSession' in navigator){
-  navigator.mediaSession.metadata=new MediaMetadata({title:'A passing storm',artist:'Rainfall / Boodler',album:'Rain, crickets & frogs'});
+  navigator.mediaSession.metadata=new MediaMetadata({title:'A passing storm',artist:'Tinroof / Boodler',album:'Rain, crickets & frogs'});
   for(const [action,handler] of Object.entries({play:start,pause,seekto:e=>seekTo(e.seekTime)})){
     try{navigator.mediaSession.setActionHandler(action,handler);}catch(e){/* Optional platform control. */}
   }

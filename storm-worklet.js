@@ -17,4 +17,4 @@ class StormProcessor extends AudioWorkletProcessor {
     return true;
   }
 }
-registerProcessor('rainfall-storm',StormProcessor);
+registerProcessor('tinroof-storm',StormProcessor);

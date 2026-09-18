@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 public final class MainActivity extends Activity {
-    private static final String START_URL = "https://boodler-storm.vercel.app/";
+    private static final String START_URL = "https://tinroof-storm.vercel.app/";
     private WebView webView;
 
     @Override

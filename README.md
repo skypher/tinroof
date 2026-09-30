@@ -32,9 +32,7 @@ suspend background audio; recording mode is the safer choice for locked screens.
 npx http-server . -p 8000 -c-1
 ```
 
-Open http://localhost:8000. Use a static server with HTTP range support so
-recorded seeking works (Python’s basic http.server does not supply that).
-There is no application build or runtime dependency.
+Open http://localhost:8000. There is no application build or runtime dependency.
 Live mode requires AudioWorklet (HTTPS or localhost in a modern browser).
 
 ## Test
@@ -43,10 +41,14 @@ Live mode requires AudioWorklet (HTTPS or localhost in a modern browser).
 npm ci
 npx playwright install chromium
 npm test
-npm run test:browser -- http://localhost:8000
+npm run test:browser
 ```
 
-To use an existing Chromium binary, set `CHROMIUM_PATH` for the browser test.
+The browser suite starts its own local HTTP server with byte-range support. To
+run it against another server, pass its URL. To use an existing Chromium binary,
+set `CHROMIUM_PATH` for the browser test.
+GitHub Actions runs the engine and browser suites and the Android API 35
+instrumentation suite on pushes and pull requests.
 Engine tests exercise an eight-hour simulation, all seven weather stages,
 cycle stretching, unchanged sample pitch, wildlife envelopes, muting, bounded
 voice counts, seeking and extreme random stage durations. Browser tests check

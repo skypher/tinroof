@@ -1,6 +1,10 @@
 import {chromium} from 'playwright';
 import assert from 'node:assert/strict';
+import {startTestServer} from './static-server.js';
 if(process.argv.includes('-h')||process.argv.includes('--help')){console.log('Usage: node tests/browser.js [URL]; set CHROMIUM_PATH to use an existing Chromium binary.');process.exit(0);}
+const localServer=process.argv[2]?null:await startTestServer();
+const pageUrl=process.argv[2]||localServer.url;
+if(localServer)console.log(`Using local range-enabled server at ${pageUrl}`);
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox']});
 try{
  const page=await browser.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -8,7 +12,7 @@ try{
    const Native=window.AudioWorkletNode;
    window.AudioWorkletNode=class extends Native{constructor(context,...args){super(context,...args);window.stormNode=this;window.stormContext=context;window.stormAnalyser=context.createAnalyser();this.connect(window.stormAnalyser);}};
  });
- await page.goto(process.argv[2]||'http://127.0.0.1:8000');
+ await page.goto(pageUrl);
  await page.click('#toggle');await page.waitForFunction(()=>document.querySelector('audio').currentTime>.2);await page.click('#toggle');
  assert(await page.$eval('#audio',a=>a.paused));
  await page.selectOption('#mode','4');assert.equal(await page.$eval('#seek',e=>e.max),'14400');
@@ -44,4 +48,4 @@ try{
  await page.selectOption('#mode','live');await page.setViewportSize({width:390,height:844});
  await page.screenshot({path:'/tmp/tinroof-live-mobile.png',fullPage:true});assert(!(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)));
  assert.deepEqual(errors,[]);console.log('PASS audio-thread continuity, mode switching, mobile layout, no JS errors');
-}finally{await browser.close();}
+}finally{await browser.close();await localServer?.close();}

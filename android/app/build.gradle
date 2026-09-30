@@ -2,6 +2,25 @@ plugins {
     id 'com.android.application'
 }
 
+def webRoot = rootProject.projectDir.parentFile
+def offlineAssetsDir = file("$buildDir/generated/offlineAssets")
+
+tasks.register('prepareOfflineAssets', Sync) {
+    from(webRoot) {
+        include 'index.html'
+        include 'style.css'
+        include 'app.js'
+        include 'live.js'
+        include 'storm-core.js'
+        include 'storm-worklet.js'
+        include 'credits.txt'
+        include 'audio/*.mp3'
+        include 'samples/manifest.json'
+        include 'samples/*.wav'
+    }
+    into(offlineAssetsDir)
+}
+
 android {
     namespace 'com.skypher.tinroof'
     compileSdk 35
@@ -13,6 +32,15 @@ android {
         targetSdk 35
         versionCode 1
         versionName '1.0'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    sourceSets {
+        main {
+            assets {
+                srcDirs = [offlineAssetsDir]
+            }
+        }
     }
 
     buildTypes {
@@ -25,5 +53,16 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+}
+
+tasks.configureEach {
+    if (name == 'preBuild' || (name.startsWith('merge') && name.endsWith('Assets'))) {
+        dependsOn(tasks.named('prepareOfflineAssets'))
     }
 }

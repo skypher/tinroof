@@ -4,7 +4,7 @@ const primary=$('audio'),spare=new Audio();
 let audio=primary, standby=spare, track=0, mode='1', desired=false, loading=false, generation=0;
 let liveStatus={phase:0,stage:'Distant thunder',cycles:0};
 const clock=s=>{const n=Math.max(0,Math.floor(s));return `${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;};
-const file=n=>n===0?'audio/storm.mp3':`audio/hour-${n+1}.mp3`;
+const file=n=>{const path=n===0?'audio/storm.mp3':`audio/hour-${n+1}.mp3`;return window.TinroofAudioAssets?window.TinroofAudioAssets.uriFor(path)||path:path;};
 const settings=()=>({hours:Number($('cycle').value),pace:Number($('pace').value),intensity:Number($('intensity').value),crickets:Number($('crickets').value),frogs:Number($('frogs').value)});
 const total=()=>mode==='live'?3600*settings().hours/settings().pace:Number(mode)*3600;
 const live=new LiveStorm(data=>{
@@ -40,6 +40,7 @@ async function start(){
       if(token!==generation||!desired)return;
       await live.play();
     }else{
+      if(!audio.src){audio.src=file(0);audio.loop=mode==='1';}
       await audio.play();
       if(token!==generation||!desired){audio.pause();return;}
       prepareNext();
@@ -50,7 +51,7 @@ async function start(){
 }
 function pause(){++generation;desired=false;loading=false;audio.pause();live.pause();update();}
 for(const element of [primary,spare]){
-  element.preload='metadata';element.volume=Number($('volume').value);
+  element.preload='none';element.volume=Number($('volume').value);
   element.addEventListener('timeupdate',()=>{if(element===audio&&mode!=='live')timeline();});
   element.addEventListener('ended',async()=>{
     if(element!==audio||mode==='live'||mode==='1'||!desired)return;

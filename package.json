@@ -2,6 +2,6 @@
   "name": "tinroof",
   "private": true,
   "type": "module",
-  "scripts": {"test": "node --test tests/engine.test.js", "test:browser": "node tests/browser.js"},
+  "scripts": {"test": "node --test tests/engine.test.js", "test:browser": "node tests/browser.js", "test:android": "cd android && ./gradlew connectedDebugAndroidTest"},
   "devDependencies": {"playwright": "1.63.0"}
 }
